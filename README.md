@@ -1,12 +1,20 @@
-Beau Tribu - Nail Salon & Beauty Bar
+# Beau Tribu - Nail Salon & Beauty Bar
 
-Website for a local nail salon in South East London.
+Full stack website for a Vietnamese nail salon in South East London called Beau Tribu. Features a secure backend,
+Dynamic and visual Frontend/UI and contact form with a built in autoresponder.
 
-Stack:
+## Tech Stack:
+- Next.js 15
+- Typescript
+- Tailwind CSS
+- Resend 
+- GSAP 
+- React-Hot-Toast 
 
-Next.js
-Typescript
-Tailwind CSS
-Resend (for contact form)
-GSAP (For animations and modals)
-React-Hot-Toast (for notifications)
+---
+
+## Features
+- A contact form with an autoresponder powered by Resend email API.
+- Animations with React and GSAP
+- Notifications using React-Hot-Toast
+- Custom built using a combination of static CSS and Tailwind CSS
