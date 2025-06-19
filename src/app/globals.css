@@ -3,27 +3,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --main-pink: #ffc0cb;
+  --main-pink: #ffd8de;
   --main-gold:  #ffd700;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-
+  --btn-pink: #c8969e;
+  --main-bronze: #CD7F32;
+  --main-shadow: 2px 2px 10px 2px white;
+  /* Fonts */
+  --head-font-size: 5rem;
+  --sub-head-font: 'Times New Roman', Times, serif;
+  --sub-head-size: 3rem;
+  --sub-text-size: 1rem;
 }

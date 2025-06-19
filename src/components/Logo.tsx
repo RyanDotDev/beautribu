@@ -3,12 +3,13 @@ import Image from 'next/image';
 
 const Logo = () => {
   return (
-    <div className='pl-1'>
+    <div className='relative pl-0 left-12 lg:pl-1 lg:left-0'>
       <Image 
         src='/logo/beau_tribu_logo.webp'
         alt='Beau Tribu Logo'
-        width={80}
-        height={80}
+        width={60}
+        height={60}
+        className='lg:'
       />
     </div>
   )

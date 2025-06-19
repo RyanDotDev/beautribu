@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-
-import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Libre_Baskerville } from 'next/font/google';
+import "./globals.css";
 
+export const libreBaskerville = Libre_Baskerville({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-libre-baskerville'
+})
 
 export const metadata: Metadata = {
   title: "Beau Tribu | Nail Salon & Beauty Bar",
@@ -17,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        
-      >
+      <body>
         <header><Navbar /></header>
         {children}
         <footer><Footer /></footer>

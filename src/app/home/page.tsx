@@ -1,9 +1,10 @@
 import React from 'react';
+import HomeContainer from './HomeContainer';
 
-const page = () => {
+export default function HomePage() {
   return (
-    <div>page</div>
+    <div>
+      <HomeContainer />
+    </div>
   )
 }
-
-export default page
