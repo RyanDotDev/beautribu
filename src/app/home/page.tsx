@@ -3,8 +3,8 @@ import HomeContainer from './HomeContainer';
 
 export default function HomePage() {
   return (
-    <div>
+    <main>
       <HomeContainer />
-    </div>
+    </main>
   )
 }

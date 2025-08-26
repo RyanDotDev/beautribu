@@ -2,9 +2,9 @@ import React from 'react'
 
 const BookingButton = () => {
   return (
-    <div className='pr-0 lg:pr-6'>
-      <button className='border-2 border-[var(--btn-pink)] text-[var(--btn-pink)] rounded-xl
-        tracking-wider cursor-pointer p-2 hover:bg-[var(--btn-pink)] hover:text-white duration-300'
+    <div className='relative top-[-2px]'>
+      <button className='btn w-[125px] btn-hover bg-[var(--btn-pink)] text-white
+        tracking-wider cursor-pointer p-2 hover:bg-[var(--main-pink)] hover:text-white duration-300'
       >
         <span className=''>BOOK NOW</span>
       </button>

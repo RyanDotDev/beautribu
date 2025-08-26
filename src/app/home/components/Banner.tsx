@@ -1,15 +1,18 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Image from 'next/image';
 import { libreBaskerville } from '@/lib/utils/fonts';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Banner = () => {
   const backgroundRef = useRef(null);
+  const headingRef = useRef<HTMLHeadingElement | null>(null);
   const contentRef =  useRef(null);
+  const overlayRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     // This creates a parallax effect for the background
@@ -23,6 +26,37 @@ const Banner = () => {
         scrub: true,
       },
     });
+
+    gsap.set(backgroundRef.current, { filter: 'brightness(1.5)' });
+
+    gsap.fromTo(
+      backgroundRef.current,
+      { filter: 'brightness(1.5)' },
+      { filter: 'brightness(1)', duration: 2, ease: 'power2.out' }
+    )
+
+    const text = headingRef.current;
+    if (text) {
+      const letters = text.innerText.split('');
+      text.innerHTML = '';
+
+      letters.forEach((letter: string, i: number) => {
+        const span = document.createElement('span');
+        span.textContent = letter;
+        span.style.display = 'inline-block';
+        span.style.opacity = '0';
+        span.style.transform = 'translateY(20px)';
+        text.appendChild(span)
+
+        gsap.to(span, {
+          opacity: 1,
+          y: 0,
+          delay: 0.5 + i * 0.05,
+          duration: 0.7,
+          ease: 'power3.out'
+        });
+      });
+    };
 
     gsap.fromTo(
       contentRef.current, 
@@ -38,46 +72,79 @@ const Banner = () => {
         delay: 0.1,
       },
     );
+
+    gsap.to(overlayRef.current, {
+      opacity: 0,
+      duration: 1.5,
+      ease: 'power2.inOut',
+      onComplete: () => {
+        if (overlayRef.current) {
+          overlayRef.current.style.display = 'none'
+        }
+      }
+    });
   }, []);
 
   return (
-    <div className='relative h-screen overflow-hidden w-screen'>
+    <>
+      {/* TEMPORARY FILTER FOR ANIMATION */}
       <div 
-        ref={contentRef}
-        className='relative z-50 text-center mt-[25vh] opacity-0 translate-y-[50px]'
-      >
-        <h1 className={`${libreBaskerville.className}
-        text-white text-[6rem] font-(family-name:--sub-head-font) tracking-wider font-[500]`}
-        >
-          Beau Tribu
-        </h1>
-        <h2 className={`${libreBaskerville.className} text-(length:--sub-head-size)
-          text-[var(--main-pink)]`}
-        >
-          Bromley&#39;s Late Night Beauty Bar
-        </h2>
-        <div className='flex justify-center gap-3 mt-[1rem]'>
-          <button className='bg-(--btn-pink) text-white p-2 cursor-pointer rounded-xl tracking-wider 
-            hover:filter-[brightness(0.9)] duration-300'
-          >
-            BOOK NOW
-          </button>
-          <button className='bg-white text-(--btn-pink) p-2 cursor-pointer rounded-xl tracking-wider
-            hover:filter-[brightness(0.9)] duration-300'
-          >
-            VIEW TREATMENTS
-          </button>
-        </div>
-      </div>
-      <Image 
-        src='/images/beau_tribu_banner_image.webp'
-        alt='Beau Tribu Banner Image'
-        fill
-        className='object-cover brightness-90'
-        ref={backgroundRef}
-        priority
+        className='absolute z-[100] h-screen overflow-hidden w-screen bg-white'
+        ref={overlayRef}
       />
-    </div>
+
+      {/* BANNER CONTENT */}
+      <div className='relative h-screen overflow-hidden w-screen'>
+        <div 
+          ref={contentRef}
+          className='relative z-50 text-center mt-[10vh] opacity-0 translate-y-[50px]'
+        >
+          <h1 
+            ref={headingRef}
+            className={`${libreBaskerville.className}
+          text-white text-[4rem] font-(family-name:--sub-head-font) tracking-wider font-[500] md:text-[6rem] `}
+          >
+            Beau Tribu
+          </h1>
+          <div ref={contentRef}>
+            <h2 className={` text-[2rem] tracking-wider text-white md:text-[2rem]`}
+            >
+              BROMLEY&#39;S LATE NIGHT NAIL SALON
+            </h2>
+            <div className='flex justify-center gap-3 mt-[2rem]'>
+              <button className='btn btn-hover bg-white text-[var(--btn-pink)] p-2 pl-4 pr-4 cursor-pointer
+                hover:bg-[var(--main-pink)] duration-300 hidden'
+              >
+                BOOK NOW
+              </button>
+              <button className='btn btn-hover bg-white tracking-wider text-[var(--btn-pink)] p-2 pl-4 pr-4 cursor-pointer
+                hover:bg-[var(--main-pink)] duration-300 hidden'
+              >
+                VIEW TREATMENTS
+              </button>
+              <button className='btn btn-hover group bg-[var(--whatsapp-green)] p-[0.8rem] rounded-full
+                text-white items-center overflow-hidden cursor-pointer hidden'
+              >
+                <WhatsAppIcon style={{ fontSize: '2rem' }}/>
+                <span className='max-w-0 opacity-0 overflow-hidden group-hover:max-w-[150px] group-hover:opacity-100
+                  group-hover:translate-x-1 group-hover:mr-[0.5rem] transition-all duration-300 whitespace-nowrap'
+                >
+                  Contact Us
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <Image 
+          src='/images/beau_tribu_graphic.webp'
+          alt='Beau Tribu Banner Image'
+          fill
+          className='object-cover'
+          ref={backgroundRef}
+          priority
+        />
+      </div>
+    </>
   )
 }
 
