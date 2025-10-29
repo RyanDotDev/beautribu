@@ -3,10 +3,10 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const WhatsApp = () => {
   return (
-    <div className='fixed bottom-[1rem] right-[1rem]'>
+    <div className='fixed bottom-[1rem] right-[1rem] z-[99]'>
       <button 
-        className='group bg-[var(--whatsapp-green)] p-[0.8rem] rounded-full
-        text-white items-center overflow-hidden cursor-pointer shadow-[0_2px_30px_rgba(0,0,0,0.65)]'
+        className='btn btn-hover duration-300 group bg-[var(--whatsapp-green)] p-[0.8rem] rounded-full
+        text-white items-center overflow-hidden cursor-pointer shadow-[0_2px_10px_rgba(0,0,0,0.45)] active:scale-95'
       >
         <WhatsAppIcon style={{ fontSize: '2rem' }}/>
         <span 

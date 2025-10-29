@@ -97,7 +97,7 @@ const Banner = () => {
       <div className='relative h-screen overflow-hidden w-screen'>
         <div 
           ref={contentRef}
-          className='relative z-50 text-center mt-[10vh] opacity-0 translate-y-[50px]'
+          className='relative z-50 flex flex-col m-[-10vh] justify-center text-center items-center h-screen opacity-0 translate-y-[50px]'
         >
           <h1 
             ref={headingRef}
@@ -106,8 +106,8 @@ const Banner = () => {
           >
             Beau Tribu
           </h1>
-          <div ref={contentRef}>
-            <h2 className={` text-[2rem] tracking-wider text-white md:text-[2rem]`}
+          <div>
+            <h2 className="text-2xl tracking-wider w-[300px] text-white md:text-2xl"
             >
               BROMLEY&#39;S LATE NIGHT NAIL SALON
             </h2>
@@ -136,7 +136,7 @@ const Banner = () => {
           </div>
         </div>
         <Image 
-          src='/images/beau_tribu_graphic.webp'
+          src='/images/banner_image_ideas.webp'
           alt='Beau Tribu Banner Image'
           fill
           className='object-cover'

@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const StaticLogo = () => {
   return (
-    <div className='relative left-18 mt-[1rem]'>
+    <div className='lg:left-18 relative left-[-8rem] mt-[1rem]'>
       <Link href='/'>
         <Image 
           src='/logo/beau_tribu_logo_original.svg'

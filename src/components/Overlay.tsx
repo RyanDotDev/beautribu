@@ -31,7 +31,7 @@ const Overlay = () => {
   return (
     <div
       ref={overlayRef}
-      className='fixed z-[99] h-full w-screen bg-white'
+      className='absolute z-[99] h-full w-screen bg-white'
     >
     </div>
   )

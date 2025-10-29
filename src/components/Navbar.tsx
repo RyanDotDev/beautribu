@@ -94,7 +94,7 @@ const Navbar = () => {
         <MobileNav />
         <div></div>
         <StaticLogo />
-        <div className='relative'>
+        <div className='relative hidden lg:block'>
           <BookingButton />
           <ShoppingButton />
         </div>

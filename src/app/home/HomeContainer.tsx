@@ -1,18 +1,20 @@
 "use client"
-import Booking from "./components/Booking";
+import Treatments from "./components/Treatments";
 import Banner from "./components/Banner";
 import Opening from "./components/Opening";
 import Gallery from "./components/Gallery";
-import Reviews from "./components/Reviews";
+import Testimonials from "./components/Testimonials";
+import Graphic from "./components/Graphic";
 
 export default function HomeContainer() {
   return (
     <>
       <Banner />
       <Opening />
-      <Booking />
-      <Reviews />
+      <Graphic />
+      <Treatments />
       <Gallery />
+      <Testimonials />
     </>
   )
 }

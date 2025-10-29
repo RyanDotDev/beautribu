@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "image": "/gallery/beau_tribu_gallery_image_one.webp"
+  },
+  {
+    "id": 2,
+    "image": "/gallery/beau_tribu_gallery_image_two.webp"
+  },
+  {
+    "id": 3,
+    "image": "/gallery/beau_tribu_gallery_image_three.webp"
+  },
+  {
+    "id": 4,
+    "image": "/gallery/beau_tribu_gallery_image_one.webp"
+  },
+  {
+    "id": 5,
+    "image": "/gallery/beau_tribu_gallery_image_two.webp"
+  },
+  {
+    "id": 6,
+    "image": "/gallery/beau_tribu_gallery_image_three.webp"
+  },
+  {
+    "id": 7,
+    "image": "/gallery/beau_tribu_gallery_image_two.webp"
+  },
+  {
+    "id": 8,
+    "image": "/gallery/beau_tribu_gallery_image_three.webp"
+  }
+]

@@ -1,10 +1,31 @@
-import React from 'react'
+import React from 'react';
+import Image from 'next/image';
+import { gallery } from '@/lib/helpers/objects/gallery';
+import type { Gallery } from '@/lib/helpers/objects/gallery';
 
 const Gallery = () => {
   return (
-    <section className='h-auto w-full p-[1rem]'>
-      <div className='bg-[var(--main-creme)] h-[400px] w-full p-[1rem] text-black'>
-        <p>Red</p>
+    <section className='bg-white h-auto w-full p-[1rem]'>
+      <div className='text-center w-full p-[1rem] text-black'>
+        <h1 className='tracking-widest font-[500] text-[var(--btn-pink)] text-[2rem] mb-[1rem]'>
+          GALLERY
+        </h1>
+          <div className='grid grid-row-2 grid-cols-4 gap-[10px]'>
+            {
+              gallery.map((src: Gallery) => (
+                <div
+                  key={src.id}
+                >
+                  <Image 
+                    src={src.image}
+                    alt={src.image}
+                    width={300}
+                    height={300}
+                  />
+                </div>
+              ))
+            }
+          </div>
       </div>
     </section>
   )
