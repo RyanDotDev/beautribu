@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Banner = () => {
   const backgroundRef = useRef(null);
   const headingRef = useRef<HTMLHeadingElement | null>(null);
-  const contentRef =  useRef(null);
+  const contentRef = useRef(null);
   const overlayRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -89,7 +89,7 @@ const Banner = () => {
     <>
       {/* TEMPORARY FILTER FOR ANIMATION */}
       <div 
-        className='absolute z-[100] h-screen overflow-hidden w-screen bg-white'
+        className='absolute z-100 h-screen overflow-hidden w-screen bg-white'
         ref={overlayRef}
       />
 
@@ -102,7 +102,7 @@ const Banner = () => {
           <h1 
             ref={headingRef}
             className={`${libreBaskerville.className}
-          text-white text-[4rem] font-(family-name:--sub-head-font) tracking-wider font-[500] md:text-[6rem] `}
+          text-white text-[4rem] font-(family-name:--sub-head-font) tracking-wider font-medium md:text-[6rem] `}
           >
             Beau Tribu
           </h1>
@@ -111,23 +111,23 @@ const Banner = () => {
             >
               BROMLEY&#39;S LATE NIGHT NAIL SALON
             </h2>
-            <div className='flex justify-center gap-3 mt-[2rem]'>
-              <button className='btn btn-hover bg-white text-[var(--btn-pink)] p-2 pl-4 pr-4 cursor-pointer
-                hover:bg-[var(--main-pink)] duration-300 hidden'
+            <div className='flex justify-center gap-3 mt-8'>
+              <button className='btn btn-hover bg-white text-(--btn-pink) p-2 pl-4 pr-4 cursor-pointer
+                hover:bg-(--main-pink) duration-300 hidden'
               >
                 BOOK NOW
               </button>
-              <button className='btn btn-hover bg-white tracking-wider text-[var(--btn-pink)] p-2 pl-4 pr-4 cursor-pointer
-                hover:bg-[var(--main-pink)] duration-300 hidden'
+              <button className='btn btn-hover bg-white tracking-wider text-(--btn-pink) p-2 pl-4 pr-4 cursor-pointer
+                hover:bg(--main-pink) duration-300 hidden'
               >
                 VIEW TREATMENTS
               </button>
-              <button className='btn btn-hover group bg-[var(--whatsapp-green)] p-[0.8rem] rounded-full
+              <button className='btn btn-hover group bg-(--whatsapp-green) p-[0.8rem] rounded-full
                 text-white items-center overflow-hidden cursor-pointer hidden'
               >
                 <WhatsAppIcon style={{ fontSize: '2rem' }}/>
                 <span className='max-w-0 opacity-0 overflow-hidden group-hover:max-w-[150px] group-hover:opacity-100
-                  group-hover:translate-x-1 group-hover:mr-[0.5rem] transition-all duration-300 whitespace-nowrap'
+                  group-hover:translate-x-1 group-hover:mr-2 transition-all duration-300 whitespace-nowrap'
                 >
                   Contact Us
                 </span>

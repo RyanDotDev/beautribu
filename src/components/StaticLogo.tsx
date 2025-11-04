@@ -4,13 +4,15 @@ import Link from 'next/link';
 
 const StaticLogo = () => {
   return (
-    <div className='lg:left-18 relative left-[-8rem] mt-[1rem]'>
+    <div className=''>
       <Link href='/'>
         <Image 
-          src='/logo/beau_tribu_logo_original.svg'
+          src='/logo/beau_tribu_logo_original.webp'
           alt='Beau Tribu Logo'
           width={120}
           height={120}
+          priority
+          style={{ imageRendering: '-webkit-optimize-contrast' }}
         />
       </Link>
     </div>

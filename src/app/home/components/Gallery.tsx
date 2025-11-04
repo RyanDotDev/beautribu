@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { gallery } from '@/lib/helpers/objects/gallery';
-import type { Gallery } from '@/lib/helpers/objects/gallery';
+import { gallery } from '@/lib/helpers/gallery/gallery';
+import type { Gallery } from '@/lib/helpers/gallery/gallery';
 
 const Gallery = () => {
   return (

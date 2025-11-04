@@ -68,4 +68,9 @@
   position: relative;
   z-index: 2;
 }
+
+.logo-wrapper svg {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
   

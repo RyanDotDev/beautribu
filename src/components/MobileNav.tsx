@@ -3,7 +3,7 @@ import { Sling as Hamburger } from 'hamburger-react'
 
 const MobileNav = () => {
   return (
-    <div className='inline mt-[3rem] lg:hidden '>
+    <div className='lg:hidden flex'>
       <Hamburger 
         size={24}
         color={'var(--btn-pink)'}
