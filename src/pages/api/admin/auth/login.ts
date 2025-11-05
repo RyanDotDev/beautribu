@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { adminEmails, supabaseAdmin } from "../supabase";
 import { adminLoginSchema } from "@/lib/schemas/adminLoginSchema";
+import { serialize } from "cookie";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
@@ -28,9 +29,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     password,
   });
 
-  if (error) {
-    return res.status(401).json({ success: false, error: error.message });
+  if (error || !data.session) {
+    return res.status(401).json({ success: false, error: error?.message || "Login failed" });
   }
+
+  const { access_token, refresh_token, expires_at } = data.session;
+
+  res.setHeader("Set-Cookie", [
+    serialize("sb-access-token", access_token, {
+      path: "/",
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      maxAge: expires_at! - Math.floor(Date.now() / 1000),
+    }),
+    serialize("sb-refresh-token", refresh_token, {
+      path: "/",
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      maxAge: 60 * 60 * 24 * 30,
+    })
+  ])
 
   return res.status(200).json({ success: true, user: data.user });
 };

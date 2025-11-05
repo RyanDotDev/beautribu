@@ -15,7 +15,6 @@ interface LoginResponse {
   error?: string | { path: string; message: string }[];
 }
 
-
 const AdminAuth: React.FC = () => {
   const router = useRouter();
   const [serverError, setServerError] = useState<string | null>(null);
@@ -66,7 +65,7 @@ const AdminAuth: React.FC = () => {
     return () => {
       document.body.style.backgroundColor = originalBackground;
     }
-  })
+  }, [])
 
   // TODO: Move beneath logic inside of "/admin/dashboard" directory (handles logout functionality). Pass down as props.
   /* const handleLogout = async () => {
