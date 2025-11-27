@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -38,12 +39,12 @@ const Treatments = () => {
   }, []);
 
   return (
-    <section ref={elementRef} className='p-[2rem] mt-[-9rem]'>
-      <div className='flex flex-col text-left justify-around gap-[2rem] lg:flex-row-reverse'>
+    <section ref={elementRef} className='p-8 -mt-36'>
+      <div className='flex flex-col text-left justify-around gap-8 lg:flex-row-reverse'>
 
         {/* LEFT SIDE OF ABOUT CONTAINER */}
         <div className='w-auto lg:w-[600px]'>
-          <h1 className="tracking-widest font-[500] text-[var(--btn-pink)] text-[2rem] mb-[1rem]"
+          <h1 className="tracking-widest font-medium text-(--btn-pink) text-[2rem] mb-4"
           >
             VARIETY AT YOUR DISPOSAL
           </h1>
@@ -53,8 +54,8 @@ const Treatments = () => {
           </p>
           <Link href='/'>
             <button 
-              className="btn btn-hover border-2 p-[1.5rem] border-[var(--main-gold)] text-[var(--main-gold)] mt-[2rem] 
-              cursor-pointer tracking-wider hover:bg-[var(--main-gold)] hover:text-white duration-300"
+              className="btn btn-hover border-2 p-6 border-(--main-gold) text-(--main-gold) mt-8 
+              cursor-pointer tracking-wider hover:bg-(--main-gold) hover:text-white duration-300"
             >
               <span>VIEW TREATMENTS</span>
             </button>
@@ -62,7 +63,7 @@ const Treatments = () => {
         </div>
 
         {/* RIGHT SIDE OF ABOUT CONTAINER */}
-        <div className='flex-shrink-0 pt-[1.5rem] justify-center'>
+        <div className='shrink-0 pt-6 justify-center'>
           <Image 
             src='/images/beau_tribu_booking_image.webp'
             alt='Beau Tribu Interior Image'

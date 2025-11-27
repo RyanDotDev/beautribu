@@ -30,7 +30,7 @@ const Header = () => {
     >
       <h1 
         className={`absolute text-white opacity-0 translate-x-[50px] text-(length:--sub-head-size) pl-[5vw] 
-          tracking-widest font-[500] sm:relative z-50 transform`}
+          tracking-widest font-medium sm:relative z-50 transform`}
         ref={headerTextRef}
       >
         ABOUT US
@@ -40,8 +40,9 @@ const Header = () => {
         alt='Beau Tribu Header Image'
         width={600}
         height={300}
-        className='header-image h-[300px] lg:h-[400px]'
-        style={{ objectFit: 'cover'}}
+        className='header-image h-[300px] lg:h-[400px] object-cover'
+        placeholder='blur'
+        blurDataURL='/images/beau_tribu_about_header_image.webp'
       />
     </div>
   );

@@ -1,0 +1,34 @@
+.webkit-fill {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px;
+}
+
+/* Custom pagination buttons for swiper slider */
+.custom-swiper .custom-bullet {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid white;
+  border-radius: 50%;
+  margin: 0 6px;
+  background: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.custom-swiper .swiper-pagination-bullet-active.custom-bullet {
+  background: white;
+  transform: scale(1.25);
+}
+
+/* Align pagination relative to title/subtitle */
+.custom-swiper .swiper-pagination {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  margin-top: -20.5rem; /* adjust distance below subtitle */
+  display: flex;
+  justify-content: center;
+  z-index: 30;
+}

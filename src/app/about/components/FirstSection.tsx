@@ -1,29 +1,30 @@
 import React from 'react';
 import Image from 'next/image';
-import { libreBaskerville } from '@/lib/utils/fonts';
 
 const FirstSection = () => {
-
   return (
-    <section className='flex flex-col mx-auto mt-[3rem] gap-[20px] justify-center lg:flex-row lg:justify-around'>
+    <section className='flex flex-col mx-auto mt-12 gap-5 justify-center lg:flex-row lg:justify-around'>
       <div className='justify-center text-center mx-auto'>
         <h2
-          className='text-3xl mx-auto mb-[2rem] block lg:hidden'
+          className='text-2xl mx-auto mb-8 block lg:hidden tracking-wider text-shadow-lg'
         >
-          We are <span className={`${libreBaskerville.className} text-[var(--btn-pink)]`}>Beau Tribu</span>
+           WE ARE <span className="text-(--btn-pink) font-semibold">BEAU TRIBU</span>
         </h2>
         <Image 
           src='/images/beau_tribu_about_us_image.webp'
           alt='Beau Tribu Portrait'
           width={300}
-          height={100}
+          height={300}
+          placeholder='blur'
+          blurDataURL='/images/beau_tribu_about_us_image.webp'
+          
         />
       </div>
-      <div className='text-center mx-auto w-auto mt-[2rem] lg:text-left lg:w-[600px]'>
+      <div className='text-center mx-auto w-auto mt-8 lg:text-left lg:w-[600px]'>
         <h2
-          className='text-3xl mb-[1rem] hidden lg:block '
+          className='text-2xl mb-4 hidden lg:block tracking-wider text-shadow-lg'
         >
-          We are <span className={`${libreBaskerville.className} text-[var(--btn-pink)]`}>Beau Tribu</span>
+          WE ARE <span className="text-(--btn-pink) font-semibold">BEAU TRIBU</span>
         </h2>
         <p className='font-light text-sm'>
           This is our lovely little tribe of souls. Our business is built on passion, care and love for our
@@ -40,7 +41,9 @@ const FirstSection = () => {
           rushed!
         </p>
         <br></br>
-        <h2 className='text-1xl mb-[1rem]'>Why we are here</h2>
+        <h2 className='text-lg mb-4 font-semibold tracking-wider text-shadow-lg'>
+          WHY WE ARE HERE
+        </h2>
         <p className='font-light text-sm'>
           We are here to <strong>make you feel radiant</strong> - not just on special occasions, but on every
           single day. Our goal is to support your beauty journey long-term, so you feel stronger, healthier 

@@ -11,10 +11,12 @@ const Graphic = () => {
         width={1040}
         height={800}
         className='lg:object-cover object-bottom brightness-90 object-cover w-full h-[700px]'
+        placeholder='blur'
+        blurDataURL='/images/beau_tribu_outside_image.webp'
       />
       <div className='lg:text-left text-center'> 
-        <h1 className={` ${libreBaskerville.className} 
-          lg:ml-[2vw] lg:w-[900px] relative top-[-30rem] ml-[0vw] w-full z-10 text-[3rem] 
+        <h1 className={`${libreBaskerville.className} 
+          lg:ml-[2vw] lg:w-[900px] relative -top-120 ml-0 w-full z-10 text-[3rem] 
           tracking-widest text-white md:text-[4rem]`}
         >
           AWARD WINNING BEAUTY

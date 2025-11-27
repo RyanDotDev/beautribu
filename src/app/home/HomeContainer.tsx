@@ -1,4 +1,3 @@
-"use client"
 import Treatments from "./components/Treatments";
 import Banner from "./components/Banner";
 import Opening from "./components/Opening";
@@ -9,13 +8,35 @@ import Graphic from "./components/Graphic";
 export default function HomeContainer() {
   return (
     <>
-      <Banner />
-      <Opening />
-      <Graphic />
-      <Treatments />
-      <Gallery />
-      <Testimonials />
-    </>
-  )
-}
+      {/* BANNER SECTION */}
+      <section>
+        <Banner />
+      </section>
 
+      {/* OPENING SECTION */}
+      <section>
+        <Opening />
+      </section>
+
+      {/* GRAPHIC SECTION */}
+      <section>
+        <Graphic />
+      </section>
+
+      {/* TREATMENTS SECTION*/}
+      <section>
+        <Treatments />
+      </section>
+
+      {/* GALLERY SECTION */}
+      <section>
+        <Gallery />
+      </section>
+
+      {/* TESTIMONIALS SECTION */}
+      <section>
+        <Testimonials />
+      </section>
+    </>
+  );
+}

@@ -77,6 +77,8 @@ const Opening = () => {
             width={500}
             height={500}
             className="mx-auto shadow-xl"
+            placeholder='blur'
+            blurDataURL='/images/beau_tribu_opening_image.webp'
           />
         </div>
 

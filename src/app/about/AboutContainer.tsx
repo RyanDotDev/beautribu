@@ -4,9 +4,16 @@ import SecondSection from './components/SecondSection';
 
 export default function AboutContainer() {
   return (
-    <div className='p-[2rem]'>
-      <FirstSection />
-      <SecondSection />
-    </div>
+    <main>
+      {/* FIRST SECTION */}
+      <section>
+        <FirstSection />
+      </section>
+
+      {/* SECOND SECTION */}
+      <section>
+        <SecondSection />
+      </section>
+    </main>
   );
 };

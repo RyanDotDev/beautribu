@@ -68,15 +68,6 @@ const AdminAuth: React.FC = () => {
   }, [])
 
   // TODO: Move beneath logic inside of "/admin/dashboard" directory (handles logout functionality). Pass down as props.
-  /* const handleLogout = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) console.error("Logout error:", error.message)
-  }; */
-
-  /* const onLogout = async () => {
-    await handleLogout();
-    router.refresh();
-  } */
 
   return (
     <div className="flex flex-col justify-center items-center">
