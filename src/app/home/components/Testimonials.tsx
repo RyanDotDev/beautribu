@@ -40,11 +40,7 @@ const Testimonials: React.FC<SliderProps> = ({
           pagination={{ clickable: true }}
           loop
           speed={800}
-          breakpoints={{
-            0: { slidesPerView: 1, spaceBetween: 20 },
-            768: { slidesPerView: 2, spaceBetween: 30 },
-          }}
-          className="w-full h-[300px] max-w-4xl custom-swiper mt-6"
+          className="w-full h-[300px] max-w-4xl custom-swiper"
         >
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>

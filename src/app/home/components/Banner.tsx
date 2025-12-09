@@ -1,10 +1,10 @@
-"use client"
-import React, { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { libreBaskerville } from '@/lib/utils/fonts';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+"use client";
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { libreBaskerville } from "@/lib/utils/fonts";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,48 +18,40 @@ const Banner = () => {
     // This creates a parallax effect for the background
     gsap.to(backgroundRef.current, {
       y: 100,
-      ease: 'none',
+      ease: "none",
       scrollTrigger: {
         trigger: backgroundRef.current,
-        start: 'top top',
-        end: 'bottom top',
+        start: "top top",
+        end: "bottom top",
         scrub: true,
       },
     });
 
-    gsap.set(backgroundRef.current, { filter: 'brightness(1.5)' });
-
-    gsap.fromTo(
-      backgroundRef.current,
-      { filter: 'brightness(1.5)' },
-      { filter: 'brightness(1)', duration: 2, ease: 'power2.out' }
-    )
-
     const text = headingRef.current;
     if (text) {
-      const letters = text.innerText.split('');
-      text.innerHTML = '';
+      const letters = text.innerText.split("");
+      text.innerHTML = "";
 
       letters.forEach((letter: string, i: number) => {
-        const span = document.createElement('span');
+        const span = document.createElement("span");
         span.textContent = letter;
-        span.style.display = 'inline-block';
-        span.style.opacity = '0';
-        span.style.transform = 'translateY(20px)';
-        text.appendChild(span)
+        span.style.display = "inline-block";
+        span.style.opacity = "0";
+        span.style.transform = "translateY(20px)";
+        text.appendChild(span);
 
         gsap.to(span, {
           opacity: 1,
           y: 0,
           delay: 0.5 + i * 0.05,
           duration: 0.7,
-          ease: 'power3.out'
+          ease: "power3.out",
         });
       });
-    };
+    }
 
     gsap.fromTo(
-      contentRef.current, 
+      contentRef.current,
       {
         opacity: 0,
         y: 50,
@@ -68,7 +60,7 @@ const Banner = () => {
         opacity: 1,
         y: 0,
         duration: 1,
-        ease: 'power3.out',
+        ease: "power3.out",
         delay: 0.1,
       },
     );
@@ -76,30 +68,31 @@ const Banner = () => {
     gsap.to(overlayRef.current, {
       opacity: 0,
       duration: 1.5,
-      ease: 'power2.inOut',
+      ease: "power2.inOut",
       onComplete: () => {
         if (overlayRef.current) {
-          overlayRef.current.style.display = 'none'
+          overlayRef.current.style.display = "none";
         }
-      }
+      },
     });
   }, []);
 
   return (
     <>
       {/* TEMPORARY FILTER FOR ANIMATION */}
-      <div 
-        className='absolute z-100 h-screen overflow-hidden w-screen bg-white'
+      <div
+        className="absolute z-100 h-screen overflow-hidden w-screen bg-white"
         ref={overlayRef}
       />
 
       {/* BANNER CONTENT */}
-      <div className='relative h-screen overflow-hidden w-screen'>
-        <div 
+      <div className="relative h-screen overflow-hidden w-screen">
+        <div
           ref={contentRef}
-          className='relative z-50 flex flex-col m-[-10vh] justify-center text-center items-center h-screen opacity-0 translate-y-[50px]'
+          className="relative z-50 flex flex-col m-[-10vh] justify-center text-center items-center h-screen opacity-0 translate-y-[50px]"
         >
-          <h1 
+          {/* BANNER TITLE */}
+          <h1
             ref={headingRef}
             className={`${libreBaskerville.className}
           text-white text-[4rem] font-(family-name:--sub-head-font) tracking-wider font-medium md:text-[6rem] `}
@@ -107,27 +100,30 @@ const Banner = () => {
             Beau Tribu
           </h1>
           <div>
-            <h2 className="text-2xl tracking-wider w-[300px] text-white md:text-2xl"
-            >
-              BROMLEY&#39;S LATE NIGHT NAIL SALON
+            <h2 className="text-2xl tracking-wider w-[300px] text-white md:text-2xl">
+              BROMLEY&#39;S NAIL SALON & BEAUTY BAR
             </h2>
-            <div className='flex justify-center gap-3 mt-8'>
-              <button className='btn btn-hover bg-white text-(--btn-pink) p-2 pl-4 pr-4 cursor-pointer
-                hover:bg-(--main-pink) duration-300 hidden'
+            <div className="flex justify-center gap-3 mt-8">
+              <button
+                className="btn btn-hover bg-white text-(--btn-pink) p-2 pl-4 pr-4 cursor-pointer
+                hover:bg-(--btn-pink) duration-300 tracking-wider font-semibold py-2 shadow-lg"
               >
                 BOOK NOW
               </button>
-              <button className='btn btn-hover bg-white tracking-wider text-(--btn-pink) p-2 pl-4 pr-4 cursor-pointer
-                hover:bg(--main-pink) duration-300 hidden'
+              <button
+                className="btn btn-hover bg-white tracking-wider text-(--btn-pink) p-2 pl-4 pr-4 cursor-pointer
+                hover:bg(--main-pink) duration-300 hidden"
               >
                 VIEW TREATMENTS
               </button>
-              <button className='btn btn-hover group bg-(--whatsapp-green) p-[0.8rem] rounded-full
-                text-white items-center overflow-hidden cursor-pointer hidden'
+              <button
+                className="btn btn-hover group bg-(--whatsapp-green) p-[0.8rem] rounded-full
+                text-white items-center overflow-hidden cursor-pointer hidden"
               >
-                <WhatsAppIcon style={{ fontSize: '2rem' }}/>
-                <span className='max-w-0 opacity-0 overflow-hidden group-hover:max-w-[150px] group-hover:opacity-100
-                  group-hover:translate-x-1 group-hover:mr-2 transition-all duration-300 whitespace-nowrap'
+                <WhatsAppIcon style={{ fontSize: "2rem" }} />
+                <span
+                  className="max-w-0 opacity-0 overflow-hidden group-hover:max-w-[150px] group-hover:opacity-100
+                  group-hover:translate-x-1 group-hover:mr-2 transition-all duration-300 whitespace-nowrap"
                 >
                   Contact Us
                 </span>
@@ -135,17 +131,19 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <Image 
-          src='/images/banner_image_ideas.webp'
-          alt='Beau Tribu Banner Image'
+
+        {/* BANNER IMAGE */}
+        <Image
+          src="/hero/beau_tribu_banner_graphic_hands.webp"
+          alt="Beau Tribu Banner Image"
           fill
-          className='object-cover'
+          className="object-cover"
           ref={backgroundRef}
           priority
         />
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Banner;

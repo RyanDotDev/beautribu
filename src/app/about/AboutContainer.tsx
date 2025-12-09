@@ -1,10 +1,12 @@
-import React from 'react';
-import FirstSection from './components/FirstSection';
-import SecondSection from './components/SecondSection';
+import React from "react";
+import FirstSection from "./components/FirstSection";
+import SecondSection from "./components/SecondSection";
+import BackgroundImage from "./components/BackgroundImage";
 
 export default function AboutContainer() {
   return (
     <main>
+      <BackgroundImage />
       {/* FIRST SECTION */}
       <section>
         <FirstSection />
@@ -16,4 +18,4 @@ export default function AboutContainer() {
       </section>
     </main>
   );
-};
+}
